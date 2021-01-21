@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-        - image: ccr.ccs.tencentyun.com/shuhe/hellotest:latest
+        - image: ccr.ccs.tencentyun.com/shuhe/nginx:stable
           imagePullPolicy: Always
           name: hellotest
           ports:
