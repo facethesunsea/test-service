@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1    
+kind: Deployment
+metadata:
+  name: $Product$-hellotest
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - image: ccr.ccs.tencentyun.com/shuhe/hellotest:latest
+          imagePullPolicy: Always
+          name: hellotest
+          ports:
+            - name: http   
+              containerPort: 8080
+            - name: http1
+              containerPort: 8082

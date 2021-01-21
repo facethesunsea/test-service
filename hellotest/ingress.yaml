@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: $Product$-hellotest
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 13g
+spec:
+  rules:
+  - host: hellotest-$Namespace$.poc7.sit.caijj.net
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: helloworld
+          servicePort: 8080
